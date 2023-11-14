@@ -1,1 +1,25 @@
 // savePrescription
+.save_presc{
+	background-color: #F6F8FF;
+	.input_wrap{
+		padding: 30px 0;
+		p{
+			font-size: 1.8rem;
+			font-weight: 500;
+			margin-bottom: 10px;
+		}
+		input{
+			width: 100%;
+			padding: 16px 10px;
+			border-radius: 10px;
+			box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.15);
+			&::placeholder{
+				font-size: 1.4rem;
+				color: #ccc;
+			}
+			&:not(:last-child){
+				margin-bottom: 20px;
+			}
+		}
+	}
+}
