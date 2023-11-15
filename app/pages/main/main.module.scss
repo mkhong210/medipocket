@@ -1,1 +1,13 @@
-// main
+.calender{
+    p{
+        color: pink;
+    }
+    .react-calendar__tile--now{
+        background:pink;
+        color: pink;
+    }
+    .react-calendar__tile--now:enabled:hover,
+    .react-calendar__tile--now:enabled:focus{
+        color: pink;
+    }
+}

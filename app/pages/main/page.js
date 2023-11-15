@@ -1,11 +1,11 @@
 import React from 'react'
 import style from './main.module.scss'
-import Calendar from '@/app/components/Calendar'
+import Cal from '@/app/components/Cal'
 
 function page() {
 	return (
 		<div>
-			<Calendar />
+			<Cal/>
 			<div>MAIN</div>
 		</div>
 	)
