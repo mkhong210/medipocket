@@ -7,7 +7,7 @@ const MyKakaoLogin = () => {
   const router = useRouter();
   const responseKakao = (res) => {
     // res.profile에 사용자 정보가 들어 있습니다.
-    console.log(res.profile);
+    console.log(res.profile.id);
     // 로컬 스토리지에 사용자 정보 저장
     localStorage.setItem("kakaoProfile", JSON.stringify(res.profile));
     router.push('/pages/splashslide');

@@ -1,0 +1,70 @@
+.calender{
+    //년/월 폰트 사이즈 
+    .react-calendar__navigation__label__labelText--from{
+        font-size: 1.8rem;
+    }
+    //전체 캘린더 숫자 크기 및 알약 이미지 위치 조정
+    .react-calendar__month-view__days__day{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        .pillgroup{
+            margin-top: .5rem;
+            img{
+            }
+        }
+        abbr{
+            font-size: 1.8rem;
+        }
+    }
+    
+    .react-calendar__month-view__days__day{
+        padding: 2rem;
+    }
+
+
+    .react-calendar__month-view__weekdays {
+        
+        abbr { /*월,화,수... 글자 부분*/
+          font-size: 1.8rem;
+          text-decoration: none;
+        }
+      }
+    // 현재 날짜 CSS 변경 
+    .react-calendar__tile--now{
+        background:#F6F9FF;
+        border-radius: 15px;
+        color: pink;
+    }
+    // 현재 날짜 클릭시 
+    .react-calendar__tile--now:enabled:hover,
+    .react-calendar__tile--now:enabled:focus{
+        background-color: #F6F9FF;
+        border-radius: 15px;
+        color: black;
+    }
+/* ================================================ */
+
+    //날짜 선택 됐을 때 day 타일 커스텀하기//
+    .react-calendar__tile--active {
+        color: black;
+        background-color: #F6F9FF;
+        border-radius: 15px;
+    }
+    .react-calendar__tile--active:enabled:hover,
+    .react-calendar__tile--active:enabled:focus {
+        background: #F6F9FF;
+    }
+    
+/* ================================================ */
+
+    .react-calendar{
+        max-width: 100%;
+        height: 100%;
+    }
+    .react-calendar__navigation__label{
+        width: 100%;
+    }
+    
+}

@@ -43,7 +43,7 @@ function page() {
               </div>
             </div>
             <div className={style.splashslide_next}>
-              <p>다음</p>
+              <a href="/pages/main">다음</a>
             </div>
           </div>
         </SwiperSlide>
