@@ -10,9 +10,8 @@ const MyKakaoLogin = () => {
     console.log(res.profile);
     // 로컬 스토리지에 사용자 정보 저장
     localStorage.setItem("kakaoProfile", JSON.stringify(res.profile));
-    router.push('/');
+    router.push('/pages/splashslide');
   };
-
   return (
     <>
       <KakaoLogin
