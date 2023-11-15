@@ -1,1 +1,95 @@
 // listPrescription
+.presc_list {
+	.date_month {
+		margin: 30px 0;
+		.month {
+			display: flex;
+			align-items: center;
+			justify-content: flex-start;
+			gap: 8px;
+			p {
+				font-size: 2rem;
+				font-weight: 500;
+			}
+			.calendar_btn{
+				display: flex;
+				align-items: center;
+				justify-content: center;
+				img{
+					width: 100%;
+				}
+			}
+		}
+		p.month_desc {
+			margin-top: 8px;
+			font-size: 1.4rem;
+			font-weight: 400;
+			color: #6893F8;
+		}
+	}
+}
+
+// Item
+.item_wrap{
+	width: 100%;
+	display: flex;
+	flex-wrap: wrap;
+	gap: 20px;
+}
+.prescItem{
+	width: calc((100% - 20px) / 2);
+	background-color: #F6F8FF;
+	border-radius: 20px;
+	box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.15);
+	overflow: hidden;
+	.title{
+		background-color: #fff;
+		padding: 16px;
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		p{
+			font-size: 1.8rem;
+			font-weight: 600;
+		}
+		img{
+			width: 7px;
+		}
+	}
+	.desc{
+		padding: 18px;
+		.hospital{
+			font-size: 1.6rem;
+			font-weight: 500;
+			margin-bottom: 8px;
+		}
+		.date{
+			font-size: 1.4rem;
+			font-weight: 400;
+			color: #6893F8;
+		}
+	}
+}
+
+// save button
+.save_btn_wrap{
+	max-width: 480px;
+	width: 100%;
+	height: 54px;
+	position: fixed;
+	bottom: 100px;
+	left: 50%;
+	transform: translateX(-50%);
+	.save_btn{
+		display: inline-block;
+		width: 54px;
+		height: 54px;
+		position: absolute;
+    top: 0;
+    right: 20px;
+		img{
+			width: 100%;
+			filter: drop-shadow(2px 2px 5px rgba(0, 0, 0, 0.15));
+		}
+	}
+}

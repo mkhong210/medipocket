@@ -1,8 +1,11 @@
 import React from 'react'
+import '../style/common.scss'
 
-function Header() {
+function Header({name}) {
 	return (
-		<div>Header</div>
+		<header className='header'>
+			<p>{name}</p>
+		</header>
 	)
 }
 

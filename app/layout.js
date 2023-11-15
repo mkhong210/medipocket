@@ -1,4 +1,5 @@
 import './style/globals.scss'
+import './style/reset.scss'
 
 export const metadata = {
 	title: '메디포켓',
