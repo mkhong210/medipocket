@@ -19,9 +19,9 @@ function BtmNavi() {
 					</Link>
 				</div>
 				<div className='item_wrap'>
-					<Link href='/pages/listPrescription' className='navi_item'>
+					<Link href='/pages/savePrescription' className='navi_item'>
 						<img src='/asset/common/ICON_prescription.png' alt='처방전 아이콘' />
-						<p>처방전</p>
+						<p>처방전등록</p>
 					</Link>
 				</div>
 			</div>
