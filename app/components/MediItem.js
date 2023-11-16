@@ -22,8 +22,8 @@ function MediItem({close}) {
 	return (
 		<div className='model'>
 			<div className='search'>
-				<input type='search' placeholder='제품명을 입력해주세요.' onKeyDown={(e) => { e.key == 'Enter' ? enterKeyDown(e.target.value) : ""; }}></input>
-				<button><img src='/asset/common/ICON_minus2.png'/></button>
+			<input ref={input_teg} type='search' placeholder='제품명을 입력해주세요.' onKeyDown={(e) => { e.key == 'Enter' ? enterKeyDown(e.target.value) : ""; }}></input>
+				<button onClick={()=>console.log(input_teg.current.value = "")}><img src='/asset/common/ICON_minus2.png' /></button>
 			</div>
 
 			<div className='list'>
