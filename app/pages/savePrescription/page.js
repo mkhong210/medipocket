@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 "use client"
 import React, { useEffect, useState } from 'react'
 import style from './savePresc.module.scss'
@@ -10,12 +9,6 @@ import { MobileDatePicker } from '@mui/x-date-pickers/MobileDatePicker';
 // import { DateRangePicker } from '@mui/x-date-pickers-pro/DateRangePicker';
 import axios from 'axios'
 import MediItem from '@/app/components/MediItem'
-=======
-import React from 'react'
-import style from './savePresc.module.scss'
-import BtmNavi from '@/app/components/BtmNavi'
-import Header from '@/app/components/Header'
->>>>>>> 72973a4d75e8dc0787146016142fd36274c69e6d
 
 function page() {
 	const [members, setMembers] = useState();
