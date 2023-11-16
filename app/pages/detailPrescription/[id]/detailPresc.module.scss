@@ -1,1 +1,207 @@
 // detailPrescription
+.contentsALL {
+  width: 100%;
+  height: calc( 100vh - 60px);
+  background: #f6f9ff;
+  .top {
+    margin-top: 20px;
+    position: relative;
+    background-color: white;
+    .top_div {
+      padding: 0 20px;
+      b {
+        font-size: 2rem;
+        margin-bottom: 5px;
+      }
+      p {
+        font-size: 1.8rem;
+        color: #999;
+      }
+    }
+    .prescription {
+      margin-top: 20px;
+      li:nth-of-type(1) {
+        //병원명
+        padding: 20px;
+        background: #fff;
+        box-shadow: 0px 2px 10px 0px rgb(0 0 0 / 9%);
+        margin-bottom: 15px;
+        display: flex;
+        align-items: center;
+        > figure {
+          padding-right: 15px;
+        }
+        > div {
+          width: 100%;
+          b {
+            font-size: 1.8rem;
+          }
+          > div {
+            margin-top: 10px;
+            display: flex;
+            justify-content: space-between;
+            > p:nth-of-type(1) {
+              font-size: 1.6rem;
+            }
+            > p:nth-of-type(2) {
+              font-size: 1.4rem;
+              color: #9d9d9d;
+              > span {
+                margin-right: 10px;
+                color: #9d9d9d;
+              }
+            }
+          }
+        }
+      }
+
+      li:nth-of-type(2) {
+        //증상
+        padding: 20px;
+        background: #fff;
+        box-shadow: 0px 2px 10px 0px rgb(0 0 0 / 9%);
+        margin-bottom: 15px;
+        display: flex;
+        align-items: center;
+        > figure {
+          padding-right: 15px;
+        }
+        > div {
+          b {
+            font-size: 1.8rem;
+          }
+          > div {
+            margin-top: 10px;
+            > p {
+              font-size: 1.6rem;
+            }
+          }
+        }
+      }
+      li:nth-of-type(3) {
+        //복용기간
+        padding: 20px;
+        background: #fff;
+        box-shadow: 0px 2px 10px 0px rgb(0 0 0 / 9%);
+        display: flex;
+        align-items: center;
+        > figure {
+          padding-right: 15px;
+        }
+        > div {
+          b {
+            font-size: 1.8rem;
+          }
+          > div {
+            margin-top: 10px;
+            > p {
+              text-align: start;
+              display: inline-block;
+            }
+            > p:nth-of-type(1) {
+              font-size: 1.6rem;
+            }
+            > p:nth-of-type(2) {
+              font-size: 1.4rem;
+              color: #6893f8;
+              padding-left: 10px;
+            }
+          }
+        }
+      }
+    }
+  }
+  .Low {
+    
+    .Low_div {
+      padding: 10px 20px;
+      display: flex;
+      align-items: center;
+      > figure {
+        padding-right: 15px;
+      }
+      b {
+        font-size: 1.8rem;
+      }
+    }
+
+    .drugList {
+      width: 100%;
+      li {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        background: #fff;
+        box-shadow: 0px 2px 10px 0px rgb(0 0 0 / 9%);
+        width: 100%;
+        padding: 25px;
+        > div {
+          font-size: 1.8rem;
+        }
+      }
+    }
+    .drugmemo {
+      > div {
+        padding: 10px 20px;
+        display: flex;
+        align-items: center;
+        > figure {
+          padding-right: 15px;
+        }
+        b {
+          font-size: 1.8rem;
+        }
+      }
+      form {
+        padding: 0 20px;
+        position: relative;
+        input {
+          width: 100%;
+          padding: 3.5% 0;
+          color: #cccccc86;
+          font-size: 1.8rem;
+          border-radius: 20px;
+          background: #fff;
+          box-shadow: 0px 2px 10px 0px rgb(0 0 0 / 9%);
+          padding: 20px;
+          font-family: Pretendard;
+        }
+        &::after{
+            content: '';
+            position: absolute;
+            top: 17px;
+            right: 40px;
+            background: url('/asset/common/ICON_plus.png') no-repeat center /100%;
+            width: 26px;
+            height: 26px;
+            display: block;
+        }
+      }
+      > ul {
+        li {
+            position: relative;
+          padding: 20px;
+          > div {
+            font-size: 1.6rem;
+            color: #939393;
+          }
+          > p {
+            font-size: 1.8rem;
+            margin-top: 10px;
+          }
+          border-bottom: 1px solid #a5c0eb90;
+          &::after{
+              content: '';
+              position: absolute;
+              top: 50px;
+              right: 40px;
+              background: url('/asset/common/ICON_minus.png') no-repeat center /100%;
+              width: 20px;
+              height: 20px;
+              display: block;
+          }
+        }
+      }
+    }
+  }
+}
