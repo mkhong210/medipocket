@@ -68,7 +68,7 @@ function page() {
 					</form>
 					{
 						modal? 
-						<MediItem close = {()=>{setmodal(false)}}/>
+						<MediItem modal close ={()=>{setmodal(false)}}/>
 						:""
 					}
 				</div>
