@@ -1,11 +1,13 @@
 "use client"
-import React, { useContext, useEffect } from 'react'
+import React, { useContext, useEffect, useRef } from 'react'
 import { MyContext } from './Context'
 import '../style/model.scss'
 import Link from 'next/link';
 
-function MediItem({close}) {
+function MediItem({ close }) {
 	const { data, search, setsearch } = useContext(MyContext);
+	const input_teg = useRef();
+	console.log(data);
 
 	const imgFilter = (imgURL) => {
 		if (imgURL == "" || imgURL == undefined) {
@@ -19,11 +21,15 @@ function MediItem({close}) {
 	}
 
 
+	useEffect(() => {
+		setsearch("")
+	}, [])
+
 	return (
 		<div className='model'>
 			<div className='search'>
-			<input ref={input_teg} type='search' placeholder='제품명을 입력해주세요.' onKeyDown={(e) => { e.key == 'Enter' ? enterKeyDown(e.target.value) : ""; }}></input>
-				<button onClick={()=>console.log(input_teg.current.value = "")}><img src='/asset/common/ICON_minus2.png' /></button>
+				<input ref={input_teg} type='search' placeholder='제품명을 입력해주세요.' onKeyDown={(e) => { e.key == 'Enter' ? enterKeyDown(e.target.value) : ""; }}></input>
+				<button onClick={() => console.log(input_teg.current.value = "")}><img src='/asset/common/ICON_minus2.png' /></button>
 			</div>
 
 			<div className='list'>
@@ -31,27 +37,30 @@ function MediItem({close}) {
 					{
 						data ?
 							data.map((item) => (
-								<li key={item.itemSeq} onClick={()=>{close()}}>
+								<li key={item.itemSeq} onClick={() => { close() }}>
 									<figure>
 										<img src={imgFilter(item.itemImage)} />
 										<figcaption><p>{item.entpName}</p><p>{item.itemName}</p>
 										</figcaption>
 									</figure>
-											<button><img src='/asset/icon/ICON_add.png' />추가하기</button>
+									<button><img src='/asset/icon/ICON_add.png' />추가하기</button>
 								</li>
 							))
 							:
-							<>
-								<li><b>검색어와 일치하는 약을 찾을 수 없습니다.</b>
-									<p>다른 검색어를 입력하시거나, <br />철자를 확인해주세요!</p></li>
-
-								<li><b>약을 직접 추가하시겠습니까?</b>
-									<p><img src='/asset/common/ICON_plus.png'/>{search}</p>
-									<button onClick={close()}>약 추가하기</button>
-								</li>
-							</>
+							<li className='fall'><b>검색어와 일치하는 약을 찾을 수 없습니다.</b>
+								<p>다른 검색어를 입력하시거나,<br />철자를 확인해주세요!</p></li>
 					}
 				</ul>
+				{
+					data == undefined ?
+						<div className='fall_add'>
+							<b>약을 직접 추가하시겠습니까?</b>
+							<span>{search}</span>
+							<button onClick={() => close()}>약 추가하기</button>
+							<button onClick={() => close()}>취소하기</button>
+						</div>
+						: ""
+				}
 			</div>
 		</div>
 	)

@@ -52,13 +52,12 @@ function page() {
 							<MobileDatePicker />
 							<MobileDatePicker />
 						</LocalizationProvider>
-
+					</form>
 						<p>복용약</p>
-						<button onClick={setmodal(true)}><img src='/public/asset/common/ICON_plus.png'/>약추가하기</button>
+						<button onClick={()=>setmodal(true)}><img src='/asset/common/ICON_plus.png'/>약추가하기</button>
 						<ul>
 							<li></li>
 						</ul>
-					</form>
 					{
 						modal? 
 						<MediItem modal close ={()=>{setmodal(false)}}/>
