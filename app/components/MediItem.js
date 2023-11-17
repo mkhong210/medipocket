@@ -1,11 +1,13 @@
 "use client"
-import React, { useContext, useEffect } from 'react'
+import React, { useContext, useEffect, useRef } from 'react'
 import { MyContext } from './Context'
 import '../style/model.scss'
 import Link from 'next/link';
 
 function MediItem({close}) {
 	const { data, search, setsearch } = useContext(MyContext);
+	const input_teg = useRef();
+
 
 	const imgFilter = (imgURL) => {
 		if (imgURL == "" || imgURL == undefined) {
@@ -47,7 +49,7 @@ function MediItem({close}) {
 
 								<li><b>약을 직접 추가하시겠습니까?</b>
 									<p><img src='/asset/common/ICON_plus.png'/>{search}</p>
-									<button onClick={close()}>약 추가하기</button>
+									<button onClick={()=>close()}>약 추가하기</button>
 								</li>
 							</>
 					}

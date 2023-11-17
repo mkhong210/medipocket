@@ -5,17 +5,30 @@ import BtmNavi from '@/app/components/BtmNavi'
 import Header from '@/app/components/Header'
 import PrescItem from '@/app/components/PrescItem'
 import Link from 'next/link'
+import Calendar from 'react-calendar';
+import 'react-calendar/dist/Calendar.css';
 
 function page() {
 	const [year, setYear] = useState(null);
-  const [month, setMonth] = useState(null);
+	const [month, setMonth] = useState(null);
+	//달력변수
+	const [value, onChange] = useState(new Date());
 
-  useEffect(() => {
-    const currentDate = new Date();
-    setYear(currentDate.getFullYear());
-    setMonth(currentDate.getMonth() + 1);
+	useEffect(() => {
+		const currentDate = new Date();
+		setYear(currentDate.getFullYear());
+		setMonth(currentDate.getMonth() + 1);
 		console.log(year, month);
-  }, [year, month]);
+	}, []);
+
+	const onClickMonth = (value, event) => {
+		// console.log(event);
+		let date = new Date(value);
+		// console.log(date.getFullYear(), date.getMonth() + 1);
+		// alert(`${event.target.lastChild[0]}`)
+		setYear(date.getFullYear());
+		setMonth(date.getMonth() + 1);
+	}
 
 	return (
 		<>
@@ -30,6 +43,23 @@ function page() {
 					</div>
 					<p className={style.month_desc}>월별 기준으로 표시됩니다.</p>
 				</div>
+
+				<Calendar
+					onChange={onChange} value={value}
+					locale='ko'
+					formatDay={(locale, date) => {
+						return date.getDate();
+					}}
+					defaultView="year"
+					view="year"
+					// nextLabel={null}
+					// prevLabel={null}
+					next2Label={null}
+					prev2Label={null}
+					showNeighboringMonth={false}
+					onClickMonth={onClickMonth}
+				/>
+
 				<div className={style.item_wrap}>
 					<PrescItem />
 					<PrescItem />
