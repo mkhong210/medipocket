@@ -8,9 +8,11 @@ import { DatePicker, LocalizationProvider } from '@mui/x-date-pickers';
 import { MobileDatePicker } from '@mui/x-date-pickers/MobileDatePicker';
 // import { DateRangePicker } from '@mui/x-date-pickers-pro/DateRangePicker';
 import axios from 'axios'
+import MediItem from '@/app/components/MediItem'
 
 function page() {
 	const [members, setMembers] = useState();
+	const [modal, setmodal] = useState(false);
 
 	const inserting = async () => {
 		await axios.post(`/api/insert`, { id: "hehe", password: "wow" })
@@ -50,7 +52,18 @@ function page() {
 							<MobileDatePicker />
 							<MobileDatePicker />
 						</LocalizationProvider>
+
+						<p>복용약</p>
+						<button onClick={setmodal(true)}><img src='/public/asset/common/ICON_plus.png'/>약추가하기</button>
+						<ul>
+							<li></li>
+						</ul>
 					</form>
+					{
+						modal? 
+						<MediItem modal close ={()=>{setmodal(false)}}/>
+						:""
+					}
 				</div>
 			</section>
 			<BtmNavi />
