@@ -1,3 +1,4 @@
+import Context from './components/Context'
 import './style/globals.scss'
 import './style/reset.scss'
 
@@ -14,7 +15,9 @@ export default function RootLayout({ children }) {
 			<body>
 				<div className='medipocket'>
 					<main>
+						<Context>
 						{children}
+						</Context>
 					</main>
 				</div>
 			</body>
