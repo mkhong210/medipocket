@@ -2,15 +2,24 @@
   max-width: 480px;
   min-height: 100vh;
   background-color: #fff;
+  position: relative;
+  transition: 1s;
 	margin: 0 auto;
 	main{
 		min-height:100vh;
 	}
 }
-
+.click{
+    //슬라이드바 클릭시 "click" 클래스 추가 
+	transform: translateY(-32rem);
+	transition: 1s;
+}
 .inner{
 	max-width: 480px;
 	width: 100%;
 	padding: 0 20px;
 	margin: 0 auto;
+}
+body{
+	overflow: hidden;
 }

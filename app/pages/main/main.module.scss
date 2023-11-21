@@ -1,19 +1,91 @@
 
 .slide_bar{
+    transition: 1s;
+    cursor: pointer;
     background-color: #E4EDFF;
     height: 100vh;
+    border-radius: 2rem 2rem 0 0;
+    padding-bottom: 5rem;
+    .slide_bar_contents{
+        padding-top: 2rem;
+        >img{
+            display: flex;
+            align-items: center;
+            margin: 0 auto;
+        }
+        .slide_bar_header{
+            padding: 2rem;
+            .date{
+                display: flex;
+                justify-content: space-between;
+                padding-bottom: 2rem;
+                p{
+                    font-size: 2rem;
+                }
+                a{
+                    font-size: 1.6rem;
+                    display: flex;
+                    align-items: center;
+                    gap: 1rem;
+                }
+            }
+            .medical{
+                display: flex;
+                align-items: center;
+                gap: .5rem;
+                img{}
+                p{
+                    font-size: 1.8rem;
+                }
+            }
+        }
+        .medical_info{
+            border-radius: 1rem;
+            background-color: #ffffff;
+            padding: 2rem;
+            margin: 2rem;
+            .medical_title{
+                display: flex;
+                align-items: center;
+                img{
+                    margin-right: 1rem;
+                }
+                p{
+                    font-size: 1.8rem;
+                }
+            }
+            .medical_date{
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                p{
+                    font-size: 1.4rem;
+                    color: #808080;
+                    span{
+                        color: #7C9BE5;
+                    }
+                }
+                img{}
+            }
+        }
+    }
 }
 
-.calender{
-    p{
-        color: pink;
+.head_bar{
+    display: flex;
+    justify-content: space-between;
+    padding: 2rem ;
+    background-color: #F6F9FF;
+    box-shadow: 0px 6px 12px -13px;
+    .head_name{
+        p{
+            font-size: 2rem;
+            color: #6893F8;
+        }
     }
-    .react-calendar__tile--now{
-        background:pink;
-        color: pink;
-    }
-    .react-calendar__tile--now:enabled:hover,
-    .react-calendar__tile--now:enabled:focus{
-        color: pink;
+    .head_logout{
+        img{
+            width: 20px;
+        }
     }
 }
