@@ -1,4 +1,7 @@
+import Header from '@/app/components/Header'
 import React from 'react'
+import style from './detailPresc.module.scss'
+
 function page() {
 	return (
 		<>

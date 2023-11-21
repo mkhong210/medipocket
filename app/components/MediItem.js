@@ -7,6 +7,7 @@ import Link from 'next/link';
 function MediItem({ close }) {
 	const { data, search, setsearch } = useContext(MyContext);
 	const input_teg = useRef();
+
 	console.log(data);
 
 	const imgFilter = (imgURL) => {
