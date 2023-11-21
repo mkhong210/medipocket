@@ -1,1 +1,53 @@
-// detail Medicine
+.DetailMedi{
+    color: #444;
+
+    figure{
+        padding: 0 20px;
+        margin-top: 50px;
+        width: 100%;
+        >img{
+            width: 100%;
+            height: 200px;
+            border-radius: 20px;
+            object-fit: cover;
+        }
+
+        >figcaption{
+            margin: 20px 0;
+            p{
+                font-size: 16px;
+            }
+            b{
+                line-height: 2;
+                color: #6893F8;
+                font-size: 20px;
+            }
+        }
+    }
+
+    ul{
+        padding: 0 20px;
+        li{
+            border-radius: 20px;
+            background-color: #F3F6FA;
+            overflow: hidden;
+            filter: drop-shadow(0 0 5px rgba(0,0,0,.15));
+            margin-bottom: 30px;
+            >p{
+                line-height: 2;
+                padding: 10px 20px;
+                font-size: 16px;
+
+                &:nth-of-type(1){
+                    display: flex;
+                    align-items: center;
+                    background-color: white;
+                    >img{
+                        margin-right: 10px;
+                    }
+                }
+            }
+        }
+    }
+
+}

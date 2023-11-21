@@ -13,6 +13,8 @@ function Context({children}){
             .then(function(respons){
                 setData(respons.data.body.items);            
             })
+        }else{
+            setData([])
         }
     }
 
@@ -22,7 +24,7 @@ function Context({children}){
     },[search])
 
     const value ={
-        data,search,setsearch
+        data,setData,search,setsearch
     }
     return (
         <MyContext.Provider value={value}>

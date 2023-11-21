@@ -33,7 +33,7 @@ function page({params}) {
   if(!Ddata.length){return <p>로딩중</p>}
   else 
   return (
-    <div>
+    <div className={style.DetailMedi}>
       <Header name="약 상세정보"/>
       <figure>
         <img src={imgFilter(Ddata[0].itemImage)}/>
@@ -41,38 +41,38 @@ function page({params}) {
           <p>{Ddata[0].entpName}</p>
           <b>{Ddata[0].itemName}</b>
         </figcaption>
+      </figure>
 
         <ul>
           <li>
-            <p>효능</p>
-            <textarea>{Ddata[0].efcyQesitm}</textarea>
+            <p><img src="/asset/icon/ICON_Exclamation.png"/>효능</p>
+            <p>{Ddata[0].efcyQesitm}</p>
           </li>
           <li>
-            <p>복용전 주의사항</p>
-            <textarea>{Ddata[0].atpnWarnQesitm}</textarea>
+            <p><img src="/asset/icon/ICON_Exclamation.png"/>복용전 주의사항</p>
+            <p>{Ddata[0].atpnWarnQesitm == undefined ? '특이 사항 없음': Ddata[0].atpnWarnQesitm}</p>
           </li>
           <li>
-            <p>사용 방법</p>
-            <textarea>{Ddata[0].useMethodQesitm}</textarea>
+            <p><img src="/asset/icon/ICON_Exclamation.png"/>사용 방법</p>
+            <p>{Ddata[0].useMethodQesitm}</p>
           </li>
           <li>
-            <p>보관법</p>
-            <textarea>{Ddata[0].depositMethodQesitm}</textarea>
+            <p><img src="/asset/icon/ICON_Exclamation.png"/>보관법</p>
+            <p>{Ddata[0].depositMethodQesitm}</p>
           </li>
           <li>
-            <p>부작용</p>
-            <textarea>{Ddata[0].seQesitm}</textarea>
+            <p><img src="/asset/icon/ICON_Exclamation.png"/>부작용</p>
+            <p>{Ddata[0].seQesitm == undefined ? '특이 사항 없음': Ddata[0].seQesitm}</p>
           </li>
           <li>
-            <p>주의사항</p>
-            <textarea>{Ddata[0].atpnQesitm}</textarea>
+            <p><img src="/asset/icon/ICON_Exclamation.png"/>주의사항</p>
+            <p>{Ddata[0].atpnQesitm == undefined ? '특이 사항 없음': Ddata[0].atpnQesitm}</p>
           </li>
           <li>
-            <p>복용 중 주의 식품 </p>
-            <textarea>{Ddata[0].intrcQesitm}</textarea>
+            <p><img src="/asset/icon/ICON_Exclamation.png"/>복용 중 주의 식품 </p>
+            <p>{Ddata[0].intrcQesitm == undefined ? '특이 사항 없음': Ddata[0].intrcQesitm}</p>
           </li>
         </ul>
-      </figure>
     </div>
   );
 }
