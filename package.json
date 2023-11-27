@@ -21,6 +21,7 @@
     "react": "^18",
     "react-calendar": "^4.6.1",
     "react-dom": "^18",
+    "react-draggable": "^4.4.6",
     "react-kakao-login": "^2.1.1",
     "sass": "^1.69.5",
     "swiper": "^11.0.4"
