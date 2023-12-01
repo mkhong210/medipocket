@@ -14,8 +14,12 @@ function page() {
 	const [members, setMembers] = useState();
 	const [modal, setmodal] = useState(false);
 
+	const savePresc = () => {
+		console.log('sucess')
+	}
+
 	const inserting = async () => {
-		await axios.post(`/api/insert`, { id: "hehe", password: "wow" })
+		await axios.post(`/api/insert`, {"medicine":[{"meidID":"1234","mediName":"타이네놀"},{"mediID":"4567","mediName":"파스"}]})
 			.then(res => {
 				console.log(res.data)
 			})
@@ -28,6 +32,7 @@ function page() {
 				setMembers(res.data);
 			})
 	}
+	
 
 	useEffect(() => {
 		// inserting()
@@ -56,20 +61,23 @@ function page() {
 							</LocalizationProvider>
 						</div>
 					</form>
-					<div className={`inner ${style.medi_wrap}`}>
-						<p className={style.input_title}>복용약</p>
-						<button onClick={() => setmodal(true)} className={style.save_btn}>
-							<img src='/asset/common/ICON_plus.png'/>약 추가하기
+						<div className={`inner ${style.medi_wrap}`}>
+							<p className={style.input_title}>복용약</p>
+							<button onClick={() => setmodal(true)} className={style.save_btn}>
+								<img src='/asset/common/ICON_plus.png'/>약 추가하기
+							</button>
+							<ul>
+								<li></li>
+							</ul>
+						</div>
+						{
+							modal? 
+							<MediItem close ={()=>setmodal(false)}/>
+							:""
+						}
+						<button className={style.save_btn} onClick={savePresc}>
+							<p>저장하기</p>
 						</button>
-						<ul>
-							<li></li>
-						</ul>
-					</div>
-					{
-						modal? 
-						<MediItem close ={()=>setmodal(false)}/>
-						:""
-					}
 				</div>
 			</section>
 			<BtmNavi />
