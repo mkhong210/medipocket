@@ -1,6 +1,7 @@
 import Header from '@/app/components/Header'
 import React from 'react'
 import style from './detailPresc.module.scss'
+import BtmNavi from '@/app/components/BtmNavi'
 
 function page() {
 	return (
@@ -86,6 +87,7 @@ function page() {
 					</div>
 				</div>
 			</div>
+			<BtmNavi />
 		</>
 	)
 }

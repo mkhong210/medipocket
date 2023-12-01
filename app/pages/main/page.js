@@ -70,7 +70,7 @@ function page() {
 					<div className={style.slide_bar_header}>
 						<div className={style.date}>
 							<p>2023년 11월 17일</p>
-							<a>전체내역 보기<img src='/asset/icon/ICON_rightarrow.png'/></a>
+							<a href='/pages/listPrescription'>전체내역 보기<img src='/asset/icon/ICON_rightarrow.png'/></a>
 						</div>
 						<div className={style.medical}>
 							<img src='/asset/icon/ICON_important.png'/>
