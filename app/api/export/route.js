@@ -1,8 +1,8 @@
 import { dbConnect } from "../route";
-const collection = await dbConnect("member");
+const collection = await dbConnect("prescription");
 
 export async function GET(req, res) {
-  let data = await collection.find({id: "hehe", password: "wow"}).toArray();
+  let data = await collection.find().toArray();
   
   console.log(data);
   return Response.json(data);
