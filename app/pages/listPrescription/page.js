@@ -13,12 +13,18 @@ function page() {
 	const [month, setMonth] = useState(null);
 	//달력변수
 	const [value, onChange] = useState(new Date());
+	const [opencal, setOpencal] = useState(false);
 
 	useEffect(() => {
+		const cal = document.getElementsByClassName('.calender');
+		console.log(cal)
+
 		const currentDate = new Date();
 		setYear(currentDate.getFullYear());
 		setMonth(currentDate.getMonth() + 1);
 		console.log(year, month);
+
+		setOpencal(false)
 	}, []);
 
 	const onClickMonth = (value, event) => {
@@ -30,6 +36,10 @@ function page() {
 		setMonth(date.getMonth() + 1);
 	}
 
+	const open_cal = function(obj) {
+		console.log(this)
+	}
+
 	return (
 		<>
 			<Header name='처방전' />
@@ -37,7 +47,7 @@ function page() {
 				<div className={style.date_month}>
 					<div className={style.month}>
 						<p>{year}.{month}</p>
-						<button className={style.calendar_btn}>
+						<button className={style.calendar_btn} onClick={open_cal}>
 							<img src='/asset/icon/ICON_calendar.png' />
 						</button>
 					</div>
@@ -58,6 +68,7 @@ function page() {
 					prev2Label={null}
 					showNeighboringMonth={false}
 					onClickMonth={onClickMonth}
+					className={style.calender}
 				/>
 
 				<div className={style.item_wrap}>
