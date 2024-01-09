@@ -57,6 +57,7 @@ function page() {
 							<p className={style.input_title}>복용기간</p>
 							<div className={style.input_date}>
 								<input type='date' id='input_startDate'></input>
+								<p>-</p>
 								<input type='date' id='input_endDate'></input>
 							</div>
 						</div>
@@ -75,7 +76,7 @@ function page() {
 							<MediItem close ={()=>setmodal(false)}/>
 							:""
 						}
-						<button className={style.saveBtn} onClick={savePresc}>
+						<button className={style.presc_saveBtn} onClick={savePresc}>
 							<p>저장하기</p>
 						</button>
 				</div>
