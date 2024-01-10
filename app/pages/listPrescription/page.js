@@ -24,9 +24,9 @@ function page() {
 		setMonth(currentDate.getMonth() + 1);
 		console.log(year, month);
 
-		setOpencal(false)
+		// setOpencal(false);
 	}, []);
-
+	
 	const onClickMonth = (value, event) => {
 		// console.log(event);
 		let date = new Date(value);
@@ -34,10 +34,12 @@ function page() {
 		// alert(`${event.target.lastChild[0]}`)
 		setYear(date.getFullYear());
 		setMonth(date.getMonth() + 1);
+		setOpencal(false);
 	}
 
 	const open_cal = function(obj) {
-		console.log(this)
+		console.log(this);
+		setOpencal(true);
 	}
 
 	return (
@@ -50,26 +52,26 @@ function page() {
 						<button className={style.calendar_btn} onClick={open_cal}>
 							<img src='/asset/icon/ICON_calendar.png' />
 						</button>
+						<Calendar
+							onChange={onChange} value={value}
+							locale='ko'
+							formatDay={(locale, date) => {
+								return date.getDate();
+							}}
+							defaultView="year"
+							view="year"
+							// nextLabel={null}
+							// prevLabel={null}
+							next2Label={null}
+							prev2Label={null}
+							showNeighboringMonth={false}
+							onClickMonth={onClickMonth}
+							className={`${style.calendar} ${opencal ? style.open :style.close}`}
+						/>
 					</div>
 					<p className={style.month_desc}>월별 기준으로 표시됩니다.</p>
 				</div>
 
-				<Calendar
-					onChange={onChange} value={value}
-					locale='ko'
-					formatDay={(locale, date) => {
-						return date.getDate();
-					}}
-					defaultView="year"
-					view="year"
-					// nextLabel={null}
-					// prevLabel={null}
-					next2Label={null}
-					prev2Label={null}
-					showNeighboringMonth={false}
-					onClickMonth={onClickMonth}
-					className={style.calender}
-				/>
 
 				<div className={style.item_wrap}>
 					<PrescItem />
