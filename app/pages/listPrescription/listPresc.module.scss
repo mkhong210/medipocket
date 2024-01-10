@@ -7,6 +7,7 @@
 			align-items: center;
 			justify-content: flex-start;
 			gap: 8px;
+			position: relative;
 			p {
 				font-size: 2rem;
 				font-weight: 500;
@@ -25,6 +26,20 @@
 			font-size: 1.4rem;
 			font-weight: 400;
 			color: #6893F8;
+		}
+	}
+	.calendar {
+		position: absolute;
+		left: 110px;
+		top: 0;
+		font-size: 1.4rem;
+		&.open {
+			opacity: 1;
+			visibility: visible;
+		}
+		&.close {
+			opacity: 0;
+			visibility: hidden;
 		}
 	}
 }
